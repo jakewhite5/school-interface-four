@@ -13,6 +13,13 @@ class School:
         print('\n')
         for i, student in enumerate(self.students):
             print(f'{i + 1}. {student.name} {student.school_id}')
+    
+    def authenticate_staff_by_id(self, employee_id, staff_password):
+        for staff in self.staff:
+            if staff.employee_id == employee_id and staff.password == staff_password:
+                return True
+            else:
+                return False
 
     def find_student_by_id(self, student_id):
         for student in self.students:
